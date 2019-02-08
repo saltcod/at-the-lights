@@ -10,7 +10,7 @@ const Todos = ({ todos, deleteTodo, completeTodo, toggleBacklog }) => {
 				return (
 					<li className="todo" key={todo.id}>
 						<label>
-							<input type="checkbox" className="complete" onClick={() => completeTodo(todo.id)} />
+							<input checked={todo.complete} type="checkbox" className="complete" onChange={() => completeTodo(todo.id)} />
 							{todo.content}
 						</label>
 
@@ -31,42 +31,40 @@ const Todos = ({ todos, deleteTodo, completeTodo, toggleBacklog }) => {
 		<p>Add an item to get started</p>
 	);
 
-	const backlog = sortedTodos.length ? (
-		sortedTodos.map(todo => {
-			if (todo.backlog) {
-				return (
-					<li className="todo" key={todo.id}>
-						<label>
-							<input type="checkbox" className="complete" onClick={() => toggleBacklog(todo.id)} />
-							{todo.content}
-						</label>
-
-						<button
-							className="delete"
-							onClick={() => {
-								deleteTodo(todo.id);
-							}}
-						>
-							{" "}
-							&times;
-						</button>
-					</li>
-				);
-			}
-		})
-	) : (
-		<p />
-	);
+	const backlogTodos = sortedTodos.filter(todo => todo.backlog);
 
 	return (
 		<div>
 			<div className="to-get-list">
 				<ul>{toGetList}</ul>
 			</div>
-			{backlog.length > 0 && (
+			{backlogTodos.length > 0 && (
 				<div className="backlog">
 					<h2>Backlog</h2>
-					<ul>{backlog}</ul>
+					<ul>
+						{
+							backlogTodos.map(todo => {
+								return (
+									<li className="todo" key={todo.id}>
+										<label>
+											<input checked={todo.complete} type="checkbox" className="complete" onChange={() => toggleBacklog(todo.id)} />
+											{todo.content}
+										</label>
+
+										<button
+											className="delete"
+											onClick={() => {
+												deleteTodo(todo.id);
+											}}
+										>
+											{" "}
+											&times;
+										</button>
+									</li>
+								);
+							})
+						}
+					</ul>
 				</div>
 			)}
 		</div>
