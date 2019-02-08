@@ -4,10 +4,6 @@
 :root {
 	/* Colors */
 	--c-yellow: #efc744;
-
-	/* Breakpoints */
-
-	@custom-media --bp-small (min-width: 38.75em); /* 620px */
 }
 html {
 	background: url(shopping-bg.jpg) no-repeat center center fixed;
@@ -33,7 +29,7 @@ h4 {
 	background: white;
 	padding: 10px;
 	position: relative;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 .site-name {
 	text-transform: uppercase;
@@ -51,6 +47,7 @@ h4 {
 .content {
 	padding: 20px;
 }
+
 .list-name-instruction {
 	font-size: 18px;
 	font-weight: normal;
@@ -62,14 +59,13 @@ input[type="text"] {
 	padding: 15px;
 	font-size: 18px;
 	color: #999;
-	margin-bottom: 20px;
 	width: 100%;
 }
 @media (min-width: 620px) {
 }
 .todo-picker-input {
 	display: block;
-	margin-bottom: 20px;
+	margin-bottom: 40px;
 }
 button {
 	border: 2px solid black;
