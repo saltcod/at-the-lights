@@ -16,8 +16,8 @@ class AddTodo extends React.Component {
 	render() {
 		return (
 			<div>
-				<form onSubmit={this.handleSubmit}>
-					<label>Add new todo</label>
+				<form className="list-form" onSubmit={this.handleSubmit}>
+					<label>Add new todo:</label>
 					<input type="text" value={this.state.content} onChange={this.handleChange} />
 				</form>
 			</div>

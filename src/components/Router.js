@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import App from "./App";
-import TodoListNamer from "./TodoListNamer";
+import App from "../components/App";
+import TodoListNamer from "../components/TodoListNamer";
 
 const Router = () => (
 	<BrowserRouter>

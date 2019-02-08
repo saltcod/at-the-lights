@@ -17,8 +17,10 @@ export function getFunName() {
 		"greedy",
 		"selfish",
 		"unhappy",
+		"ignorant",
 		"murderous",
 		"miserable",
+		"miserly",
 		"infuriating",
 		"stupid"
 	];
