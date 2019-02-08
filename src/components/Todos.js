@@ -10,7 +10,13 @@ const Todos = ({ todos, deleteTodo, completeTodo, toggleBacklog }) => {
 				return (
 					<li className="todo" key={todo.id}>
 						<label>
-							<input checked={todo.complete} type="checkbox" className="complete" onChange={() => completeTodo(todo.id)} />
+							<input
+								checked={todo.complete}
+								type="checkbox"
+								className="complete"
+								onChange={() => completeTodo(todo.id)}
+							/>
+							<span />
 							{todo.content}
 						</label>
 
@@ -42,28 +48,32 @@ const Todos = ({ todos, deleteTodo, completeTodo, toggleBacklog }) => {
 				<div className="backlog">
 					<h2>Backlog</h2>
 					<ul>
-						{
-							backlogTodos.map(todo => {
-								return (
-									<li className="todo" key={todo.id}>
-										<label>
-											<input checked={todo.complete} type="checkbox" className="complete" onChange={() => toggleBacklog(todo.id)} />
-											{todo.content}
-										</label>
+						{backlogTodos.map(todo => {
+							return (
+								<li className="todo" key={todo.id}>
+									<label>
+										<input
+											checked={todo.complete}
+											type="checkbox"
+											className="complete"
+											onChange={() => toggleBacklog(todo.id)}
+										/>
+										<span />
+										{todo.content}
+									</label>
 
-										<button
-											className="delete"
-											onClick={() => {
-												deleteTodo(todo.id);
-											}}
-										>
-											{" "}
-											&times;
-										</button>
-									</li>
-								);
-							})
-						}
+									<button
+										className="delete"
+										onClick={() => {
+											deleteTodo(todo.id);
+										}}
+									>
+										{" "}
+										&times;
+									</button>
+								</li>
+							);
+						})}
 					</ul>
 				</div>
 			)}

@@ -36,6 +36,7 @@ class App extends Component {
 		const todos = this.state.todos;
 		const currentTodo = todos.find(todo => todo.id === id);
 		currentTodo.backlog = !currentTodo.backlog;
+		currentTodo.complete = false;
 		this.setState({ todos });
 	};
 
