@@ -17,6 +17,7 @@ class App extends Component {
 			state: "todos",
 			asArray: true
 		});
+		document.title = `List: ${params.listId}`;
 	}
 
 	addTodo = todo => {
@@ -52,7 +53,7 @@ class App extends Component {
 			<div className="App">
 				<Header />
 				<div className="content">
-					<AddTodo addTodo={this.addTodo} />
+					<AddTodo addTodo={this.addTodo} listId={this.props.match.params.listId} />
 					<h2>Todos</h2>
 					<Todos
 						todos={this.state.todos}

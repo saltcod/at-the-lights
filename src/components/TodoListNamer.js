@@ -10,6 +10,9 @@ class TodoListNamer extends React.Component {
 		this.props.history.push(`/list/${listName}`);
 	};
 
+	componentDidMount() {
+		document.title = "Create a new list";
+	}
 	render() {
 		return (
 			<div>
