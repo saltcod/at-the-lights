@@ -1,13 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import App from "../components/App";
-import TodoListNamer from "../components/TodoListNamer";
+import ListNamer from "./ListNamer";
 
 const Router = () => (
 	<BrowserRouter>
 		<Switch>
-			<Route exact path="/" component={TodoListNamer} />
-			<Route path="/list/:listId" component={App} />
+			<Route exact path="/" component={ListNamer} />
 		</Switch>
 	</BrowserRouter>
 );
